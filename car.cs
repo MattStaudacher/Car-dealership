@@ -58,7 +58,7 @@ class Car
 
   public bool WorthBuying(int maxPrice, int maxMiles)
   {
-    return (_price < maxPrice && _miles < maxMiles)
+    return (_price < maxPrice && _miles < maxMiles);
   }
 
   public void CarInfo()
@@ -95,9 +95,17 @@ public class Program
       }
     }
 
-    foreach(Car automobile in MatchingCars)
+    if(MatchingCars.Count != 0)
     {
-      automobile.CarInfo();
+      foreach(Car automobile in MatchingCars)
+      {
+        automobile.CarInfo();
+      }
     }
+    else
+    {
+      Console.WriteLine("No Cars Found");
+    }
+
   }
 }
